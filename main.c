@@ -20,11 +20,8 @@ fp = fopen(path, "r");
 if (fp == NULL){{printf("invalid path! (%s)\n", path);
 
 return -1 ;}
-}
-
-
-while( fgets(str, 100, fp) !=NULL)
-{ if (strncmp(str, lookup, strlen(lookup)) == 0){
+while( fgets(str, 100, fp) !=NULL){
+ if (strncmp(str, lookup, strlen(lookup)) == 0){
 	printf("%s", str);
 	printf("search succeed!\n");
 	fclose(fp);
@@ -37,5 +34,9 @@ fclose(fp);
 
 return 0;
 }
+}
+
+
+
 
 
