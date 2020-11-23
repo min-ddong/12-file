@@ -5,14 +5,14 @@
 /* run this program using the console pauser or add your own getch, system("pause") or input loop */
 
 void main(void){
-FILE*memo;
-
-if((memo = fopen("sample.txt", "w") ) == NULL){
-	printf("File open error.\n");
-	return 0;
+FILE*fp = NULL;
+char c;
+fp = fopen("sample.txt", "r");
+if (fp == NULL)
+printf("파일을 못 열음\n");
+while((c=fgetc(fp)) != EOF);
+putchar(c);
+fclose(fp);
 }
 
-fprintf(memo, "test");
 
-fclose(memo);
-}
